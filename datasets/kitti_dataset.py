@@ -1,8 +1,3 @@
-# Copyright Niantic 2019. Patent Pending. All rights reserved.
-#
-# This software is licensed under the terms of the Monodepth2 licence
-# which allows for non-commercial use only, the full terms of which are made
-# available in the LICENSE file.
 
 from __future__ import absolute_import, division, print_function
 
@@ -22,12 +17,12 @@ class KITTIDataset(MonoDataset):
         super(KITTIDataset, self).__init__(*args, **kwargs)
 
         # NOTE: Make sure your intrinsics matrix is *normalized* by the original image size    
-        self.K = np.array([[0.61, 0, 0.5, 0], #0.58,0.5,1.92,0.5 was there
-                           [0, 1.08, 0.5, 0],
+        self.K = np.array([[0.58, 0, 0.5, 0],
+                           [0, 1.92, 0.5, 0],
                            [0, 0, 1, 0],
                            [0, 0, 0, 1]], dtype=np.float32)
 
-        self.full_res_shape = (3840, 2160)
+        self.full_res_shape = (x1, x2)#size of the image
         self.side_map = {"2": 2, "3": 3, "l": 2, "r": 3}
 
     def check_depth(self):
