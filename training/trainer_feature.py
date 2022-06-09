@@ -262,33 +262,6 @@ class Trainer:
             #all_color_aug = torch.cat([inputs[("color_aug", i, 0)] for i in range(2)])
             #all_features = self.models["encoder"](all_color_aug)
             #all_features = [torch.split(f, self.opt.batch_size) for f in all_features]
-
-            #features = {}
-            #for i, k in enumerate(self.opt.frame_ids):
-                #features[k] = [f[i] for f in all_features]
-            #features1=features[0]
-            #features2=features[1]
-            #all_color_aug1 = (torch.unsqueeze(inputs[("color_aug", 0, 1)],2) )
-            #features1 = self.models["encoder"](all_color_aug)
-            #features2 = self.models["encoder1"](all_color_aug1)
-            #print(features1[0].size())
-            #print(features1[1].size())
-            #print(features1[2].size())
-            #print(features1[3].size())
-            #print(features2[0].size())
-            #print(features2[1].size())
-            #print(features2[2].size())
-            #print(features2[3].size())
-            #feature_concat1=(features1[0])
-            #feature_concat1=torch.cat((features1[0],features2[0]),1)
-            #feature_concat2=torch.cat((features1[1],features2[0]),1)
-            #feature_concat3=torch.cat((features1[2],features2[1]),1)
-            #feature_concat4=torch.cat((features1[3],features2[2]),1)
-            #feature_concat5=torch.cat((features1[4],features2[3]),1)
-            #print(feature_concat1.size())
-            #print(feature_concat2.size())
-            #print(feature_concat3.size())
-            #print(feature_concat4.size())
             
             feature_concat1=torch.cat((torch.unsqueeze(features1[0],2),torch.unsqueeze(features2[0],2)),2)
             feature_concat2=torch.cat((torch.unsqueeze(features1[1],2),torch.unsqueeze(features2[1],2)),2)
