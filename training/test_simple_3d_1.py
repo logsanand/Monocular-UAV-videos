@@ -145,12 +145,7 @@ def test_simple(args):
             feature_concat3=torch.cat((torch.unsqueeze(features1[2],2),torch.unsqueeze(features2[2],2)),2)
             feature_concat4=torch.cat((torch.unsqueeze(features1[3],2),torch.unsqueeze(features2[3],2)),2)
             feature_concat5=torch.cat((torch.unsqueeze(features1[4],2),torch.unsqueeze(features2[4],2)),2)
-            #feature_concat1=(features1[0])
-            #feature_concat1=torch.cat((features1[0],features2[0]),2)
-            #feature_concat2=torch.cat((features1[1],features2[0]),1)
-            #feature_concat3=torch.cat((features1[2],features2[1]),1)
-            #feature_concat4=torch.cat((features1[3],features2[2]),1)
-            #feature_concat5=torch.cat((features1[4],features2[3]),1)
+
             feature_concat=[]
             feature_concat.append(feature_concat1)
             feature_concat.append(feature_concat2)
