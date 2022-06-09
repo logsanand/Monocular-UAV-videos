@@ -22,7 +22,7 @@ class KITTIDataset(MonoDataset):
                            [0, 0, 1, 0],
                            [0, 0, 0, 1]], dtype=np.float32)
 
-        self.full_res_shape = (x1, x2)#size of the image
+        self.full_res_shape = (*1, *2)#size of the image
         self.side_map = {"2": 2, "3": 3, "l": 2, "r": 3}
 
     def check_depth(self):
